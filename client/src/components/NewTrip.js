@@ -141,7 +141,7 @@ function NewTrip (trips, setTrips, cars, setCars, clients, setClients) {
     
                             {error ? <p className="CreateErrorMessage">{error.error}</p> : ""}
     
-                            <button type="submit">Add Vehicle</button>
+                            <button type="submit" className="button">Add Vehicle</button>
     
     
                         </form>)
@@ -190,7 +190,7 @@ function NewTrip (trips, setTrips, cars, setCars, clients, setClients) {
     
                             {error ? <p className="CreateErrorMessage">{error.error}</p> : ""}
     
-                            <button type="submit">Add Client</button>
+                            <button type="submit" className="button">Add Client</button>
     
     
                         </form>)
@@ -260,7 +260,7 @@ function NewTrip (trips, setTrips, cars, setCars, clients, setClients) {
     
                             {error ? <p className="CreateErrorMessage">{error.error}</p> : ""}
     
-                            <button type="submit">Add Trip</button>
+                            <button type="submit" className="button">Add Trip</button>
     
     
                         </form>)

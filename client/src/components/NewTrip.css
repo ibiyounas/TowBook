@@ -7,13 +7,21 @@
     padding: 20px;
   }
   
-button {
-  background-color: rgb(215, 221, 221);
+.button {
+  background-color: rgb(75, 166, 166);
   width: auto;
   display: flex;
 }
+.button :hover{
+  background-color: indianred;
+  transform: scale(1.05);
+
+}
  .indent {
   padding-left: 30px;
+  background-color: rgb(44, 81, 82);
+  padding-bottom: 20px;
+  padding-top: 50px;
  }
   .login-header {
     display: flex;

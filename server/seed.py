@@ -27,7 +27,7 @@ if __name__ == '__main__':
         car1 = Car(vin = '3h5f49hg485h', make = 'Acura', model = 'TLX', year = 2009, owner_id = 1)
         car2 = Car(vin = 'jg458j93h50d', make = 'Honda', model = 'Accord', year = 2013, owner_id = 2)
         car3 = Car(vin = 'n3293bg5ui24', make = 'Ford', model = 'Escape', year = 2005, owner_id = 3)
-        car4 = Car(vin = '23jf98vj49f5', make = 'Volkswagon', model = 'GTI', year = 2017, owner_id = 4)
+        car4 = Car(vin = '23jf98vj49f5', make = 'Volkswagen', model = 'GTI', year = 2017, owner_id = 4)
         car5 = Car(vin = 'ht53bf53gf73', make = 'BMW', model = 'M3', year = 2022, owner_id = 2)
         client1 = Clients(id = 1, name = 'Maria Smith', phone_number = '7329472758', address = '284 Maple street, Old Bridge NJ')
         client2 = Clients(id = 2, name = 'Stephen Sampson', phone_number = '7328364931', address = '189 Jefferson ave, Rahway NJ')

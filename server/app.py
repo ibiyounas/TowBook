@@ -125,7 +125,7 @@ class Tripss(Resource):
         return make_response(trip.to_dict(), 201)
     
     def delete(self, id):
-        trips = Trips.query.filter_by(id=id).all()
+        trips = Trips.query.filter_by(id=id).first()
         if trips:
             db.session.delete(trips)
             db.session.commit()
@@ -141,8 +141,46 @@ class Tripses(Resource):
         trips_list = [trip.to_dict() for trip in trips]
         return make_response(trips_list, 201)
     
+    def post(self):
+        params = request.json
+        try:
+            trip = Trips(id=params['id'],
+                            car_vin=params['car_vin'],
+                            driver_id=params['driver_id'],
+                            client_id=params['client_id'],
+                            status=params['status'],
+                            pickup_location=params['pickup_location'],
+                            dropoff_location=params['dropoff_location'])
+            db.session.add(trip)
+            db.session.commit()
+            return make_response(trip.to_dict(), 201)
+        except Exception as e:
+            return make_response(str(e), 400)
+    
 
 api.add_resource(Tripses, '/trips')
+
+class Cars(Resource):
+    def get(self):
+        cars = Car.query.all()
+        cars_list = [car.to_dict() for car in cars]
+        return make_response(cars_list, 201)
+    def post(self):
+        params = request.json
+        try:
+            car = Car(vin=params['vin'],
+                            make=params['make'],
+                            model=params['model'],
+                            year=params['year'],
+                            owner_id=params['owner_id'])
+            db.session.add(car)
+            db.session.commit()
+            return make_response(car.to_dict(), 201)
+        except Exception as e:
+            return make_response(str(e), 400)
+    
+
+api.add_resource(Cars, '/cars')
 
 class ClientsById(Resource):
     def get(self, id):
@@ -151,9 +189,46 @@ class ClientsById(Resource):
             return make_response(client.to_dict(), 200)
         else:
             return make_response({'message': 'Client not found'}, 404)
+        
+    def patch(self, id):
+        client = Clients.query.filter_by(id=id).first()
+        if not client:
+            return make_response({"error": "User not found"}, 404)
+        try:
+            params = request.json
+            for attr in params:
+                setattr(client, attr, params[attr])
+            db.session.add(client)
+            db.session.commit()
+
+            client_dict = client.to_dict()
+            return make_response(client_dict, 202)
+        except Exception as e:
+            return make_response({"error": str(e)}, 400)
     
 api.add_resource(ClientsById, '/client/<int:id>')
 
+class Clientses(Resource):
+    def get(self):
+        clients = Clients.query.all()
+        clients_list = [client.to_dict() for client in clients]
+        return make_response(clients_list, 201)
+    
+    def post(self):
+        params = request.json
+        try:
+            client = Clients(id=params['id'],
+                            name=params['name'],
+                            phone_number=params['phone_number'],
+                            address=params['address'])
+            db.session.add(client)
+            db.session.commit()
+            return make_response(client.to_dict(), 201)
+        except Exception as e:
+            return make_response(str(e), 400)
+    
+
+api.add_resource(Clientses, '/clients')
 
 @app.route('/')
 def index():

@@ -7,6 +7,14 @@
     padding: 20px;
   }
   
+button {
+  background-color: rgb(215, 221, 221);
+  width: auto;
+  display: flex;
+}
+ .indent {
+  padding-left: 30px;
+ }
   .login-header {
     display: flex;
     justify-content: space-between;
@@ -59,24 +67,8 @@
     margin-top: 0;
   }
   
-  .form-group {
-    margin-bottom: 15px;
-  }
   
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="password"],
-  .form-group input[type="file"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
+
   button {
     width: 100%;
     padding: 10px;
@@ -164,9 +156,7 @@
     margin: 0 0 10px 20px;
     color: black;
   }
-  .form {
-    display: flex
-  }
+  
   
   .row-posters {
     display: grid;

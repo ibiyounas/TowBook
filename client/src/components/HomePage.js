@@ -6,14 +6,14 @@ import './HomePage.css';
 import TripCard from './TripCard';
 
 
-const HomePage = (trips, setTrips) => {
+const HomePage = (trips, onDelete) => {
     //const {make, year, image, info} = trips
 
   
   const trip_array = trips.trips
   console.log(trip_array)
   const tripCard = trip_array.map((trip) => {
-    return <TripCard key={trip.id} car = {trip.car} id = {trip.id} driver = {trip.drivers.name} location = {trip.pickup_location}/>
+    return <TripCard key={trip.id} car = {trip.car} id = {trip.id} driver = {trip.drivers.name} location = {trip.pickup_location} onDelete={onDelete} trip = {trip}/>
   })
   console.log (trips.length)
   return (
@@ -30,11 +30,8 @@ const HomePage = (trips, setTrips) => {
         </div>
       </div>
       <div className="row">
-        <h2>Unassigned Jobs</h2>
-        <div className="row-posters">
-          <img src="https://via.placeholder.com/200x100" alt="Trip Preview" />
-          <img src="https://via.placeholder.com/200x100" alt="Trip Preview" />
-          <img src="https://via.placeholder.com/200x100" alt="Trip Preview" />
+        <h2></h2>
+        <div>
         </div>
       </div>
     </div>

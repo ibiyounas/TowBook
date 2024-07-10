@@ -1,0 +1,13 @@
+.page {
+    background-color: hsl(180, 17%, 28%);
+    padding-bottom: 300px;
+}
+
+.details {
+    
+    background-color: rgb(39, 69, 70);
+    min-height: 65vh;
+    padding: 20px;
+    margin-bottom: 0px;
+    display: grid;
+  }

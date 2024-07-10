@@ -1,7 +1,7 @@
 /* src/components/HomePage.css */
 .homepage {
     color: var(--text);
-    background-color: hsl(0, 14%, 99%);
+    background-color: hsl(180, 53%, 87%);
     min-height: 100vh;
     padding: 20px;
   }
@@ -75,6 +75,4 @@
     transition: transform 0.3s;
   }
   
-  .row-posters img:hover {
-    transform: scale(1.05);
-  }
+ 

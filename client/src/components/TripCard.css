@@ -1,0 +1,22 @@
+.info:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    border-color: aqua;
+    border: 0cap;
+}
+
+.info {
+    align-items: left;
+    display: grid;
+    text-align: left;
+}
+
+.trash {
+    background-color: teal;
+    width: auto;
+    display: flex
+    ;
+}
+.trash:hover {
+    background-color: indianred;
+}

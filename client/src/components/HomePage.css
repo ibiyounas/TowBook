@@ -1,7 +1,7 @@
 /* src/components/HomePage.css */
 .homepage {
-    color: var(--text);
-    background-color: hsl(180, 53%, 87%);
+    color: blue(--text);
+    background-color: hsl(180, 43%, 57%);
     min-height: 100vh;
     padding: 20px;
   }
@@ -63,6 +63,7 @@
   
   .row-posters {
     display: grid;
+    margin-right: auto;
     gap: 10px;
     padding: 0 20px;
   }
